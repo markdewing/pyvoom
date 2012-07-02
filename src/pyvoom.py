@@ -96,7 +96,7 @@ def jit(target_f):
             elif isinstance(a, float):
                 ee_args.append(GenericValue.real(ty_float, a))
             elif isinstance(a, numpy.ndarray):
-                ee_args.append(GenericValue.pointer(Type.pointer(_numpy_struct),a))
+                ee_args.append(GenericValue.pointer(Type.pointer(_numpy_struct),id(a)))
             else:
                 print 'arg type not handled',a,type(a)
 
